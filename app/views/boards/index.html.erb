@@ -21,6 +21,8 @@
         </label>
 
         <input type="text" id="name_box" name="query_name">
+
+        <!--<input type="text" id="name_box" name="query_name">-->
       </div>
 
       <button>
@@ -38,6 +40,8 @@
       <a href="/boards/<%= a_board.id %>">
         <%= a_board.name %>
       </a>
+      Owner: <%= current_user %>
+
     </li>
   <% end %>
 </ul>

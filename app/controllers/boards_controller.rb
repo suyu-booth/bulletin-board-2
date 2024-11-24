@@ -11,6 +11,7 @@ class BoardsController < ApplicationController
     the_id = params.fetch("path_id")
 
     matching_boards = Board.where({ :id => the_id })
+    
 
     @the_board = matching_boards.at(0)
 
@@ -26,6 +27,7 @@ class BoardsController < ApplicationController
   def create
     the_board = Board.new
     the_board.name = params.fetch("query_name")
+    the_board.user_id = current_user.id
 
     if the_board.valid?
       the_board.save
